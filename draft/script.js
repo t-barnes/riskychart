@@ -160,7 +160,7 @@ function buildTimeMenus() {
     startSelect.innerHTML = "";
     endSelect.innerHTML = "";
 
-    for (let minutes = 0; minutes < 1440; minutes += 30) {
+    for (let minutes = 480; minutes < 1440; minutes += 30) {
 
         const value = minutesToValue(minutes);
 
@@ -173,7 +173,7 @@ function buildTimeMenus() {
     }
 
 
-    for (let minutes = 30; minutes <= 1440; minutes += 30) {
+    for (let minutes = 510; minutes <= 1440; minutes += 30) {
 
         const value = minutesToValue(minutes);
 
@@ -1372,5 +1372,6 @@ refreshMasterButton.addEventListener(
 
 
 loadMasterAvailability();
+
 
 
