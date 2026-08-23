@@ -136,8 +136,8 @@ function formatTime(value) {
 
     const minutes = valueToMinutes(value);
 
-    if (minutes === 1440) {
-        return "12:00 AM";
+    if (minutes === 0 || minutes === 1440) {
+        return "Midnight";
     }
 
     let hours = Math.floor(minutes / 60);
@@ -511,7 +511,7 @@ allDayButton.addEventListener(
 
         workingRanges = [
             {
-                start: "00:00",
+                start: "08:00",
                 end: "24:00"
             }
         ];
@@ -1372,6 +1372,7 @@ refreshMasterButton.addEventListener(
 
 
 loadMasterAvailability();
+
 
 
 
