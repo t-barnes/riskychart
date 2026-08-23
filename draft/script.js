@@ -15,7 +15,6 @@ const currentRanges = document.getElementById("current-ranges");
 const rangeError = document.getElementById("range-error");
 
 const allDayButton = document.getElementById("all-day");
-const unavailableButton = document.getElementById("unavailable-day");
 const clearButton = document.getElementById("clear-day");
 
 const closeButton = document.getElementById("close-day");
@@ -516,20 +515,6 @@ allDayButton.addEventListener(
                 end: "24:00"
             }
         ];
-
-        rangeError.textContent = "";
-
-        renderWorkingRanges();
-    }
-);
-
-
-unavailableButton.addEventListener(
-    "click",
-    () => {
-
-        workingUnavailable = true;
-        workingRanges = [];
 
         rangeError.textContent = "";
 
@@ -1388,3 +1373,4 @@ refreshMasterButton.addEventListener(
 
 
 loadMasterAvailability();
+
