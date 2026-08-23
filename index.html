@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Draft Scheduler | RiskyChart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+
+    <header class="page-header">
+        <h1>Fantasy Draft Scheduler</h1>
+        <p>Select when you could be available for the draft.</p>
+    </header>
+
+    <section class="card name-card">
+        <label for="participant-name">Your name</label>
+        <input
+            id="participant-name"
+            type="text"
+            maxlength="50"
+            placeholder="Enter your name"
+            autocomplete="name"
+        >
+    </section>
+
+    <section class="calendar-section">
+        <div class="section-heading">
+            <div>
+                <h2>Your Availability</h2>
+                <p>August 28 – September 8, 2026</p>
+            </div>
+
+            <div id="completion-status" class="progress-text">
+                0 of 12 days entered
+            </div>
+        </div>
+
+        <div id="calendar"></div>
+    </section>
+
+    <section class="submit-section">
+        <button id="submit-availability" type="button" disabled>
+            Submit Availability
+        </button>
+
+        <p id="submit-message"></p>
+    </section>
+
+
+    <section id="master-section" class="master-section">
+
+        <div class="section-heading">
+            <div>
+                <h2>Everyone's Availability</h2>
+                <p id="master-summary">
+                    Loading submitted calendars...
+                </p>
+            </div>
+
+            <button id="refresh-master" type="button" class="secondary-button">
+                Refresh
+            </button>
+        </div>
+
+        <div id="master-results"></div>
+
+    </section>
+
+</main>
+
+
+<dialog id="day-dialog">
+
+    <div class="dialog-header">
+        <div>
+            <div class="small-label">Set availability for</div>
+            <h2 id="selected-date"></h2>
+        </div>
+
+        <button
+            id="close-day"
+            class="icon-button"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+    </div>
+
+
+    <div class="range-picker">
+
+        <label>
+            Start
+            <select id="start-time"></select>
+        </label>
+
+        <span class="to-label">to</span>
+
+        <label>
+            End
+            <select id="end-time"></select>
+        </label>
+
+        <button id="add-range" type="button">
+            Apply Range
+        </button>
+
+    </div>
+
+    <p id="range-error" class="error-message"></p>
+
+
+    <div class="current-section">
+        <h3>Availability for this day</h3>
+        <div id="current-ranges"></div>
+    </div>
+
+
+    <div class="quick-actions">
+        <button id="all-day" type="button">
+            Available All Day
+        </button>
+
+        <button id="unavailable-day" type="button">
+            Unavailable All Day
+        </button>
+
+        <button id="clear-day" type="button">
+            Clear
+        </button>
+    </div>
+
+
+    <div class="dialog-footer">
+        <button id="cancel-day" class="secondary-button" type="button">
+            Cancel
+        </button>
+
+        <button id="save-day" type="button">
+            Save Day
+        </button>
+    </div>
+
+</dialog>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
