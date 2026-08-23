@@ -1245,7 +1245,7 @@ async function loadMasterAvailability() {
         6/8
         5/8
 
-        Only show the top three levels.
+        Show all matching levels, highest availability first.
     */
 
     const matchLevels =
@@ -1256,8 +1256,7 @@ async function loadMasterAvailability() {
                 )
             )
         ]
-        .sort((a, b) => b - a)
-        .slice(0, 3);
+        .sort((a, b) => b - a);
 
 
     matchLevels.forEach(
@@ -1373,4 +1372,5 @@ refreshMasterButton.addEventListener(
 
 
 loadMasterAvailability();
+
 
