@@ -700,6 +700,9 @@ const masterResults =
 const masterSummary =
     document.getElementById("master-summary");
 
+const submittedNames =
+    document.getElementById("submitted-names");
+
 const refreshMasterButton =
     document.getElementById("refresh-master");
 
@@ -1021,6 +1024,8 @@ async function loadMasterAvailability() {
     masterSummary.textContent =
         "Loading submitted calendars...";
 
+    submittedNames.textContent = "";
+
     masterResults.innerHTML = "";
 
 
@@ -1038,6 +1043,8 @@ async function loadMasterAvailability() {
         masterSummary.textContent =
             "Could not load submitted calendars.";
 
+        submittedNames.textContent = "";
+
         masterResults.innerHTML =
             '<div class="master-empty">' +
             error.message +
@@ -1052,6 +1059,8 @@ async function loadMasterAvailability() {
         masterSummary.textContent =
             "No calendars have been submitted yet.";
 
+        submittedNames.textContent = "";
+
         masterResults.innerHTML =
             '<div class="master-empty">' +
             'Shared availability will appear here after someone submits.' +
@@ -1062,6 +1071,10 @@ async function loadMasterAvailability() {
 
 
     const total = data.length;
+
+    submittedNames.textContent =
+        "Submitted: " +
+        data.map(submission => submission.name).join(", ");
 
     masterSummary.textContent =
         `${total} submitted ${
@@ -1372,6 +1385,7 @@ refreshMasterButton.addEventListener(
 
 
 loadMasterAvailability();
+
 
 
 

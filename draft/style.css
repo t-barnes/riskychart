@@ -609,3 +609,13 @@ dialog::backdrop {
     margin-top: 9px;
 }
 
+
+/* Submitted player names */
+
+.submitted-names {
+    margin: 6px 0 0;
+    color: #53616d;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
